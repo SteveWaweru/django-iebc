@@ -16,9 +16,7 @@ class DashboardTemplateView(TemplateView):
             'content-type': "application/json",
         }
         response = requests.request("GET", url, headers=headers)
-
         data = response.json()
         context['polling'] = data['progress']
         context['parties'] = data['results']['parties']
-        print context
         return context
