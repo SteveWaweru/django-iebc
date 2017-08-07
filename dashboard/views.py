@@ -15,8 +15,14 @@ class DashboardTemplateView(TemplateView):
         headers = {
             'content-type': "application/json",
         }
-        response = requests.request("GET", url, headers=headers)
-        data = response.json()
-        context['polling'] = data['progress']
-        context['parties'] = data['results']['parties']
-        return context
+        try:
+            response = requests.request("GET", url, headers=headers)
+            data = response.json()
+            print data
+            context['polling'] = data['progress']
+            context['parties'] = data['results']['parties']
+            return context
+        except:
+            print('Error In Connection')
+            context['error'] = True
+            return context
