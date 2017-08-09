@@ -11,7 +11,8 @@ class DashboardTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(DashboardTemplateView, self).get_context_data(**kwargs)
-        url = "https://apitest.secured.vote/jsons/round1/results/Kenya_Elections_Presidential/1/info.json"
+        # url = "https://apitest.secured.vote/jsons/round1/results/Kenya_Elections_Presidential/1/info.json"
+        url = "https://public.rts.iebc.or.ke/jsons/round1/results/Kenya_Elections_Presidential%2F1/info.json"
         headers = {
             'content-type': "application/json",
         }
