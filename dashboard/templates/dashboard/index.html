@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,10 +56,10 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4>Polling Station Processed: <span class="label label-default">{{ polling.processed }}</span></h4>
+                        <h4>Polling Station Processed: <span class="label label-default">{{ polling.processed | intcomma }}</span></h4>
                     </div>
                     <div class="col-sm-6">
-                        <h4>Total Polling Stations: <span class="label label-success">{{ polling.total }}</span></h4>
+                        <h4>Total Polling Stations: <span class="label label-success">{{ polling.total | intcomma }}</span></h4>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -77,7 +78,7 @@
                             <tr style="background-color: {{ party.color }}">
                                 <td>{{ party.name }}</td>
                                 <td>{{ party.acronym }}</td>
-                                <td>{{ party.votes.presential }}</td>
+                                <td>{{ party.votes.presential | intcomma }}</td>
                                 <td>{{ party.votes.percent }}</td>
                             </tr>
                             {% empty %}
