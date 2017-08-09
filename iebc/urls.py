@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from dashboard.views import DashboardTemplateView
+from dashboard.views import DashboardTemplateView, SenetorsListTemplateView, GovernorListTemplateView, WomensRepListTemplateView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', DashboardTemplateView.as_view(), name='home')
+    url(r'^$', DashboardTemplateView.as_view(), name='home'),
+    url(r'^senetors/$', GovernorListTemplateView.as_view(), name='senetors'),
+    url(r'^governors/$', SenetorsListTemplateView.as_view(), name='governors'),
+    url(r'^women-rep/$', WomensRepListTemplateView.as_view(), name='women-rep')
 
 ]
