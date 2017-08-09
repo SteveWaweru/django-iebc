@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -32,7 +32,7 @@
 
                         <tbody>
                         {% for party in parties %}
-                            <tr style="background-color: {{ party.color }}">
+                            <tr>
                                 <td>{{ party.name }}</td>
                                 <td>{{ party.acronym }}</td>
                                 <td>{{ party.votes.presential | intcomma }}</td>
